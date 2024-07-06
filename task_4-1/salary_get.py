@@ -42,12 +42,12 @@ def salaries_numbers() -> list[str]:
 # creating a function total_salary, which analyzes text file in the same folder
 # and returning total and average summary of the employees' salaries
 # the argument of the function is a path to the text document which contains all relevant info
-def total_salary(path: str) -> int:
+def total_salary(path: str) -> tuple[int]:
     sum = 0                                                                 # creating sum as for summary
     
     for salary_unit in salaries_numbers():                                  # getting each salary unit to summarize them in the sum
         sum += int(float(salary_unit))                                      # the summary is supposed to be integer
     avg = int(sum / len(salaries_numbers()))                                # finding average salary with dividing the summary into the amount of employees (rows)
     
-    return int(sum), int(avg)                                               # return tuple of the summary and the average salary
+    return int(sum), int(avg)                                               # return tuple of the summary and the average salary in the integer format
 
